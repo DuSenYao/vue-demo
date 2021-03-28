@@ -1,12 +1,90 @@
-// const path = require("path");
-// function resolve(dir) {
-//   return path.join(__dirname, "./", dir);
-// }
+const path = require('path');
 
+function resolve(dir) {
+  return path.join(__dirname, './', dir);
+}
+
+const name = 'demo';
+
+const port = process.env.port || process.env.npm_config_port || 8080;
+
+// 配置项说明 https://cli.vuejs.org/config/
 module.exports = {
-  publicPath: "/",
-  outputDir: "dist",
-  assetsDir: "",
+  publicPath: '/',
+  outputDir: 'dist',
+  assetsDir: 'static',
+  lintOnSave: false,
   runtimeCompiler: true,
-  productionSourceMap: false
+  productionSourceMap: false,
+  devServer: {
+    port: port,
+    open: false, //默认false   true自动打开网页
+    overlay: {
+      warnings: false,
+      errors: true
+    }
+  },
+  configureWebpack: {
+    name: name,
+    // 配置路径别名
+    resolve: {
+      alias: {
+        '@': resolve('src')
+      }
+    },
+    devtool: 'source-map'
+  },
+  chainWebpack(config) {
+    // 启用预加载，提高首屏加载速度
+    config.plugin('preload').tap(() => [
+      {
+        rel: 'preload',
+        // 忽略 runtime.js
+        // https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/config/app.js#L171
+        fileBlacklist: [/\.map$/, /hot-update\.js$/, /runtime\..*\.js$/],
+        include: 'initial'
+      }
+    ]);
+
+    // 当页面很多时，它将导致太多无意义的请求
+    config.plugins.delete('prefetch');
+
+    config.when(process.env.NODE_ENV !== 'development', () => {
+      config
+        .plugin('ScriptExtHtmlWebpackPlugin')
+        .after('html')
+        .use('script-ext-html-webpack-plugin', [
+          {
+            // `runtime`必须与runtimeChunk名称相同。默认是“运行时”
+            inline: /runtime\..*\.js$/
+          }
+        ])
+        .end();
+      config.optimization.splitChunks({
+        chunks: 'all',
+        cacheGroups: {
+          libs: {
+            name: 'chunk-libs',
+            test: /[\\/]node_modules[\\/]/,
+            priority: 10,
+            chunks: 'initial' // 仅打包最初依赖的第三方
+          },
+          elementUI: {
+            name: 'chunk-elementUI', // 将elementUI拆分为一个包
+            priority: 20, // 权重必须大于libs和app，否则将被打包到libs或app中
+            test: /[\\/]node_modules[\\/]_?element-ui(.*)/ // in order to adapt to cnpm
+          },
+          commons: {
+            name: 'chunk-commons',
+            test: resolve('src/components'), // 可以自定义规则
+            minChunks: 3, // 最小公用数
+            priority: 5,
+            reuseExistingChunk: true
+          }
+        }
+      });
+      // https:// webpack.js.org/configuration/optimization/#optimizationruntimechunk
+      config.optimization.runtimeChunk('single');
+    });
+  }
 };
