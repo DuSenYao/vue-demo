@@ -344,5 +344,17 @@ module.exports = {
     'plugin:vue/strongly-recommended',
     'eslint:recommended',
     '@vue/prettier'
+  ],
+
+  overrides: [
+    {
+      files: [
+        '**/__tests__/*.{j,t}s?(x)',
+        '**/tests/unit/**/*.spec.{j,t}s?(x)'
+      ],
+      env: {
+        jest: true
+      }
+    }
   ]
 };
