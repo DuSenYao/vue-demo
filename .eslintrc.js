@@ -7,7 +7,7 @@ module.exports = {
     es6: true
   },
 
-  extends: ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"],
+  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier'],
 
   parserOptions: {
     parser: 'babel-eslint'
@@ -26,7 +26,7 @@ module.exports = {
         trailingComma: 'none',
         endOfLine: 'auto',
         bracketSpacing: true,
-        arrowParens: 'always'
+        arrowParens: 'avoid'
       }
     ],
     'no-alert': 0,
@@ -63,10 +63,7 @@ module.exports = {
     'no-implicit-coercion': 1,
     'no-implied-eval': 2,
     'no-inline-comments': 0,
-    'no-inner-declarations': [
-      2,
-      'functions'
-    ],
+    'no-inner-declarations': [2, 'functions'],
     'no-invalid-regexp': 2,
     'no-invalid-this': 2,
     'no-irregular-whitespace': 2,
@@ -76,18 +73,9 @@ module.exports = {
     'no-lone-blocks': 2,
     'no-lonely-if': 2,
     'no-loop-func': 1,
-    'no-mixed-requires': [
-      0,
-      false
-    ],
-    'no-mixed-spaces-and-tabs': [
-      2,
-      false
-    ],
-    'linebreak-style': [
-      0,
-      'windows'
-    ],
+    'no-mixed-requires': [0, false],
+    'no-mixed-spaces-and-tabs': [2, false],
+    'linebreak-style': [0, 'windows'],
     'no-multi-spaces': 1,
     'no-multi-str': 2,
     'no-multiple-empty-lines': [
@@ -151,56 +139,28 @@ module.exports = {
     'no-warning-comments': [
       1,
       {
-        terms: [
-          'todo',
-          'fixme',
-          'xxx'
-        ],
+        terms: ['todo', 'fixme', 'xxx'],
         location: 'start'
       }
     ],
     'no-with': 2,
-    'array-bracket-spacing': [
-      2,
-      'never'
-    ],
+    'array-bracket-spacing': [2, 'never'],
     'arrow-parens': 0,
     'arrow-spacing': 0,
     'accessor-pairs': 0,
     'block-scoped-var': 0,
-    'brace-style': [
-      1,
-      '1tbs'
-    ],
+    'brace-style': [1, '1tbs'],
     'callback-return': 1,
     camelcase: 2,
-    'comma-dangle': [
-      2,
-      'never'
-    ],
+    'comma-dangle': [2, 'never'],
     'comma-spacing': 0,
-    'comma-style': [
-      2,
-      'last'
-    ],
-    complexity: [
-      0,
-      11
-    ],
-    'computed-property-spacing': [
-      0,
-      'never'
-    ],
+    'comma-style': [2, 'last'],
+    complexity: [0, 11],
+    'computed-property-spacing': [0, 'never'],
     'consistent-return': 0,
-    'consistent-this': [
-      2,
-      'that'
-    ],
+    'consistent-this': [2, 'that'],
     'constructor-super': 0,
-    curly: [
-      2,
-      'all'
-    ],
+    curly: [2, 'all'],
     'default-case': 0,
     'dot-location': 0,
     'dot-notation': [
@@ -212,18 +172,12 @@ module.exports = {
     'eol-last': 0,
     eqeqeq: 2,
     'func-names': 0,
-    'func-style': [
-      0,
-      'declaration'
-    ],
+    'func-style': [0, 'declaration'],
     'generator-star-spacing': 0,
     'guard-for-in': 0,
     'handle-callback-err': 0,
     'id-length': 0,
-    indent: [
-      2,
-      2
-    ],
+    indent: [2, 2],
     'init-declarations': 0,
     'key-spacing': [
       0,
@@ -233,63 +187,29 @@ module.exports = {
       }
     ],
     'lines-around-comment': 0,
-    'max-depth': [
-      0,
-      4
-    ],
-    'max-len': [
-      0,
-      80,
-      4
-    ],
-    'max-nested-callbacks': [
-      0,
-      2
-    ],
-    'max-params': [
-      0,
-      3
-    ],
-    'max-statements': [
-      0,
-      10
-    ],
+    'max-depth': [0, 4],
+    'max-len': [0, 80, 4],
+    'max-nested-callbacks': [0, 2],
+    'max-params': [0, 3],
+    'max-statements': [0, 10],
     'new-cap': 2,
     'new-parens': 2,
     'newline-after-var': 2,
-    'object-curly-spacing': [
-      0,
-      'never'
-    ],
+    'object-curly-spacing': [0, 'never'],
     'object-shorthand': 0,
     'one-var': 0,
-    'operator-assignment': [
-      0,
-      'always'
-    ],
-    'operator-linebreak': [
-      2,
-      'after'
-    ],
+    'operator-assignment': [0, 'always'],
+    'operator-linebreak': [2, 'after'],
     'padded-blocks': 0,
     'prefer-const': 0,
     'prefer-spread': 0,
     'prefer-reflect': 0,
-    quotes: [
-      1,
-      'single'
-    ],
-    'quote-props': [
-      0,
-      'always'
-    ],
+    quotes: [1, 'single'],
+    'quote-props': [0, 'always'],
     radix: 2,
     'id-match': 0,
     'require-yield': 0,
-    semi: [
-      0,
-      'always'
-    ],
+    semi: [0, 'always'],
     'semi-spacing': [
       0,
       {
@@ -298,22 +218,10 @@ module.exports = {
       }
     ],
     'sort-vars': 0,
-    'space-after-keywords': [
-      0,
-      'always'
-    ],
-    'space-before-blocks': [
-      0,
-      'always'
-    ],
-    'space-before-function-paren': [
-      0,
-      'always'
-    ],
-    'space-in-parens': [
-      0,
-      'never'
-    ],
+    'space-after-keywords': [0, 'always'],
+    'space-before-blocks': [0, 'always'],
+    'space-before-function-paren': [0, 'always'],
+    'space-in-parens': [0, 'never'],
     'space-infix-ops': 0,
     'space-return-throw-case': 0,
     'space-unary-ops': [
@@ -329,18 +237,12 @@ module.exports = {
     'valid-jsdoc': 0,
     'valid-typeof': 2,
     'vars-on-top': 2,
-    'wrap-iife': [
-      2,
-      'inside'
-    ],
+    'wrap-iife': [2, 'inside'],
     'wrap-regex': 0,
-    yoda: [
-      2,
-      'never'
-    ]
+    yoda: [2, 'never']
   },
 
-  'extends': [
+  extends: [
     'plugin:vue/strongly-recommended',
     'eslint:recommended',
     '@vue/prettier'
