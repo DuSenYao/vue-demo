@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <h1>This is an about page{{ count }}</h1>
-    <el-button @click="$store.commit('increment', 2)">count+=2</el-button>
+    <el-button @click="$store.commit('increment')">count++</el-button>
   </div>
 </template>
 
@@ -11,6 +11,7 @@ export default {
   data() {
     return {};
   },
+
   computed: {
     count() {
       return this.$store.state.count;
