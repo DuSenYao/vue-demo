@@ -8,14 +8,13 @@
       "type": "chrome",
       "request": "launch",
       "name": "vuejs: chrome",
-      "url": "http://localhost:8080",
+      "url": "http://localhost:8081",
       "webRoot": "${workspaceFolder}/src",
       "breakOnLoad": true,
       "sourceMapPathOverrides": {
+        // 对应浏览器sources下 webpack:/// 的 .目录 和 src目录
         "webpack:///src/*": "${webRoot}/*",
         "webpack:///./src/*.js": "${webRoot}/*.js"
-        // "webpack:///./src/store/*": "${webRoot}/store/*",
-        // "webpack:///./src/router/*": "${webRoot}/router/*"
       }
     },
     {

@@ -6,11 +6,13 @@ function resolve(dir) {
 
 const name = 'demo';
 
+const NODE_ENV = process.env.NODE_ENV;
+
 const port = process.env.port || process.env.npm_config_port || 8080;
 
 // 配置项说明 https://cli.vuejs.org/config/
 module.exports = {
-  publicPath: '/',
+  publicPath: NODE_ENV === 'development' ? '/' : '',
   outputDir: 'dist',
   assetsDir: 'static',
   lintOnSave: false,
@@ -32,7 +34,7 @@ module.exports = {
         '@': resolve('src')
       }
     },
-    devtool: 'source-map'
+    devtool: NODE_ENV === 'development' ? 'source-map' : ''
   },
   chainWebpack(config) {
     // 启用预加载，提高首屏加载速度
