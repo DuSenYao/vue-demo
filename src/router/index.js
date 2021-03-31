@@ -16,8 +16,12 @@ const routes = [
     // 路由级代码拆分
     // 这会为此路由生成一个单独的块（about.[hash].js）
     // 在访问路线时被延迟加载。
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import('../views/About.vue')
+  },
+  {
+    path: '/Websdk',
+    name: 'Websdk',
+    component: () => import('../views/WebSdk.vue')
   }
 ];
 
