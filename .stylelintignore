@@ -1,0 +1,6 @@
+public/**
+src/assets/**
+node_modules/*
+
+tests
+dist

@@ -1,4 +1,5 @@
 const path = require('path');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 function resolve(dir) {
   return path.join(__dirname, './', dir);
@@ -42,7 +43,16 @@ module.exports = {
         '@': resolve('src')
       }
     },
-    devtool: NODE_ENV === 'development' ? 'source-map' : ''
+    devtool: NODE_ENV === 'development' ? 'source-map' : '',
+    plugins: [
+      new StyleLintPlugin({
+        files: ['**/*.{vue,htm,html,css,sss,less,scss,sass}'],
+        fix: false, // 是否自动修复
+        cache: true, // 是否缓存
+        emitErrors: true,
+        failOnError: false
+      })
+    ]
   },
   chainWebpack(config) {
     // 启用预加载，提高首屏加载速度
