@@ -20,7 +20,7 @@ module.exports = {
   productionSourceMap: false,
   devServer: {
     port: port,
-    open: false, //默认false   true自动打开网页
+    open: true, //默认false   true自动打开网页
     overlay: {
       warnings: false,
       errors: true
@@ -49,7 +49,7 @@ module.exports = {
     ]);
 
     // 当页面很多时，它将导致太多无意义的请求
-    config.plugins.delete('prefetch');
+    // config.plugins.delete('prefetch');
 
     config.when(process.env.NODE_ENV !== 'development', () => {
       config
@@ -62,6 +62,7 @@ module.exports = {
           }
         ])
         .end();
+
       config.optimization.splitChunks({
         chunks: 'all',
         cacheGroups: {
@@ -85,6 +86,7 @@ module.exports = {
           }
         }
       });
+
       // https:// webpack.js.org/configuration/optimization/#optimizationruntimechunk
       config.optimization.runtimeChunk('single');
     });
