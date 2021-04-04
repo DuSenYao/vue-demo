@@ -15,9 +15,12 @@ before_script:
 script:
   - npm run build
 
+after_script:
+  - cd ./dist
+
 branches:
-only:
-  - master
+  only:
+    - master
 
 notifications:
   email: false
