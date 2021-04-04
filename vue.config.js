@@ -12,7 +12,7 @@ const port = process.env.port || process.env.npm_config_port || 8080;
 
 // 配置项说明 https://cli.vuejs.org/config/
 module.exports = {
-  publicPath: NODE_ENV === 'development' ? '/' : '',
+  publicPath: NODE_ENV === 'development' ? '/' : '/vue-demo',
   outputDir: 'dist',
   assetsDir: 'static',
   lintOnSave: false,
