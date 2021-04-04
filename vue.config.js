@@ -26,6 +26,14 @@ module.exports = {
       errors: true
     }
   },
+  css: {
+    loaderOptions: {
+      scss: {
+        // 为 scss 配置共享全局变量
+        additionalData: '@import "./src/styles/variables.scss";' //注意
+      }
+    }
+  },
   configureWebpack: {
     name: name,
     // 配置路径别名

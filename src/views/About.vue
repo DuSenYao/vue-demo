@@ -67,6 +67,6 @@ export default {
   border-radius: 4px;
   font-size: 24px;
   border: 1px solid #ccc;
-  background: #e5e9f2;
+  background: $bacColor;
 }
 </style>
