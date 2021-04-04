@@ -5,7 +5,9 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/Websdk">websdk</router-link>
     </div>
-    <router-view />
+    <transition>
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 

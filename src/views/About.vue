@@ -1,17 +1,17 @@
 <template>
   <div class="about">
     <el-row :gutter="6">
-      <el-col :span="6" :offset="9">count: {{ count }}</el-col>
+      <el-col :span="6" :offset="9"> count: {{ count }} </el-col>
     </el-row>
     <el-row>
-      <el-col :span="6" :offset="9">countAlias: {{ countAlias }}</el-col>
+      <el-col :span="6" :offset="9"> countAlias: {{ countAlias }} </el-col>
     </el-row>
     <el-row>
-      <el-col :span="6" :offset="9"
-        >doubleCount: {{ $store.getters.doubleCount }}</el-col
-      >
+      <el-col :span="6" :offset="9">
+        doubleCount: {{ $store.getters.doubleCount }}
+      </el-col>
     </el-row>
-    <el-button @click="$store.commit('increment', 1)">count++</el-button>
+    <el-button @click="$store.commit('increment', 1)"> count++ </el-button>
     <!-- <el-button @click="increment(1)">count++</el-button> -->
     <!-- .dispatch 调用 vuex actions 中的方法 -->
     <el-button @click="$store.dispatch('increment', { n: 2 })">
@@ -40,11 +40,19 @@ export default {
     ...mapState({
       countAlias: 'count'
     })
-  }
+  },
   // 当一个组件需要获取多个状态的时候，将这些状态都声明为计算属性会有些重复和冗余。为了解决这个问题，可以使用 `mapState` 辅助函数帮助生成计算属性
   // computed: mapState({
   //   count: state => state.count
   // })
+  beforeRouteLeave(to, from, next) {
+    const answer = window.confirm('您确定要退出当前页面吗？您有未保存的更改！');
+
+    if (answer) {
+      return next();
+    }
+    next(false);
+  }
 };
 </script>
 

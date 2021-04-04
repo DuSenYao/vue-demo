@@ -1,11 +1,8 @@
 <template>
   <el-row>
     <el-col :span="12">
-      <el-input
-        v-model="message"
-        style="width: 200px"
-        placeholder="请输入内容"
-      ></el-input>
+      <el-input v-model="message" style="width: 200px" placeholder="请输入内容">
+      </el-input>
       <span>{{ message }}</span>
     </el-col>
     <el-col :span="5">

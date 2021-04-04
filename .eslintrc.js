@@ -7,15 +7,19 @@ module.exports = {
     es6: true
   },
 
-  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier'],
+  extends: [
+    'plugin:vue/strongly-recommended',
+    'eslint:recommended',
+    '@vue/prettier'
+  ],
 
   parserOptions: {
     parser: 'babel-eslint'
   },
 
   rules: {
-    'no-console': 0,
-    'no-debugger': 2,
+    'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'prettier/prettier': [
       'error',
       {
@@ -241,13 +245,7 @@ module.exports = {
     'wrap-regex': 0,
     yoda: [2, 'never']
   },
-
-  extends: [
-    'plugin:vue/strongly-recommended',
-    'eslint:recommended',
-    '@vue/prettier'
-  ],
-
+  // jest 测试配置
   overrides: [
     {
       files: [
