@@ -1,5 +1,15 @@
 language: node_js
 node_js: 10
-script: npm run test
+
+cache: npm
+
+script: npm run build
+
+deploy:
+provider: pages
+skip_cleanup: true
+local_dir: dist
 notifications:
-  email: true
+  email: false
+on:
+  branch: master
