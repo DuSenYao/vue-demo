@@ -5,7 +5,7 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/Websdk">websdk</router-link> |
       <router-link to="/404">404</router-link> |
-      <router-link to="/login">login</router-link>
+      <router-link to="/user/login">login</router-link>
     </div>
     <transition>
       <router-view></router-view>

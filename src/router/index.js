@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '@/views/Home';
 import NProgress from 'nprogress'; // progress bar
 import 'nprogress/nprogress.css';
+import Home from '@/views/Home';
 
 NProgress.configure({ showSpinner: false });
 
@@ -18,9 +18,28 @@ const routes = [
     }
   },
   {
-    path: '/login',
-    name: 'Login',
-    component: () => import('@/views/login/index')
+    path: '/user',
+    component: () =>
+      import(/* webpackChunkName: "layout" */ '@/layout/UserLayout'),
+    children: [
+      {
+        path: '',
+        redirect: 'login'
+      },
+      {
+        path: 'login',
+        name: 'Login',
+        component: () =>
+          // /* webpackChunkName: "user" */ 是webpack特殊注释语法，会把相同名称的统一打包
+          import(/* webpackChunkName: "user" */ '@/views/user/Login')
+      },
+      {
+        path: 'register',
+        name: 'Register',
+        component: () =>
+          import(/* webpackChunkName: 'user' */ '@/views/user/Register')
+      }
+    ]
   },
   {
     path: '/about',
@@ -52,6 +71,7 @@ const router = new VueRouter({
 
 // 全局前置守卫
 router.beforeEach((to, from, next) => {
+  NProgress.start();
   console.log({ to, from });
   next();
 });
