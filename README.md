@@ -22,3 +22,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## License
+
+[MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
