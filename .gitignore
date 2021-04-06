@@ -1,8 +1,7 @@
 .DS_Store
 node_modules
 /dist
-tests/**/coverage/
-package-lock.json
+
 
 # local env files
 .env.local
@@ -14,12 +13,19 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+## 本地配置文件
+package-lock.json
+.vscode/launch.json
+
+# 本地缓存文件
+.stylelintcache
+tests/**/coverage/
+tests/**/__snapshots__
+
 # Editor directories and files
 .idea
-.vscode/launch.json
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-.stylelintcache

@@ -2,7 +2,6 @@ module.exports = {
   root: true,
 
   env: {
-    node: true,
     browser: true,
     es6: true
   },
@@ -112,7 +111,6 @@ module.exports = {
     'no-script-url': 0,
     'no-self-compare': 2,
     'no-sequences': 0,
-    'no-shadow': 2,
     'no-shadow-restricted-names': 2,
     'no-spaced-func': 2,
     'no-sparse-arrays': 2,
@@ -196,7 +194,21 @@ module.exports = {
     'max-nested-callbacks': [0, 2],
     'max-params': [0, 3],
     'max-statements': [0, 10],
-    'new-cap': 2,
+    'jsx-quotes': [2, 'prefer-single'],
+    'keyword-spacing': [
+      2,
+      {
+        before: true,
+        after: true
+      }
+    ],
+    'new-cap': [
+      2,
+      {
+        newIsCap: true,
+        capIsNew: false
+      }
+    ],
     'new-parens': 2,
     'newline-after-var': 2,
     'object-curly-spacing': [0, 'never'],

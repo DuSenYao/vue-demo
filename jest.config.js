@@ -20,6 +20,7 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1'
   },
+  // 生成快照
   snapshotSerializers: ['jest-serializer-vue'],
   // 告诉jest去哪里找编写的测试文件
   testMatch: [
