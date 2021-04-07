@@ -2,7 +2,7 @@
   <div class="home">
     <HelloWorld msg="Welcome to Your Vue.js App" />
     <el-upload
-      action="/GCLSBookWebSI/ServiceInterface"
+      action="/api/GCLSBookWebSI/ServiceInterface"
       :file-list="fileList"
       :before-remove="beforeRemove"
       :on-success="handleUploadSuccess"
@@ -43,11 +43,18 @@ export default {
     request(params) {
       const file = params.file;
 
-      axios.post(file.action, {
-        Parameter: file,
-        FileSize: file.size,
-        FileName: file.name
-      });
+      axios
+        .post(params.action, {
+          Parameter: file,
+          FileSize: file.size,
+          FileName: file.name
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     }
   }
 };

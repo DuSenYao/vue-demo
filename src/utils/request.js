@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Message } from 'element-ui';
 
-axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true; // 跨域请求时是否需要使用凭证
 axios.defaults.dataType = 'json';
 axios.defaults.headers['cache-control'] = 'no-cache';
 axios.defaults.headers['Content-Type'] = 'application/json';

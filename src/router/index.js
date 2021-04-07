@@ -59,6 +59,10 @@ const routes = [
     component: () => import('@/views/404')
   },
   {
+    path: '/upload',
+    component: () => import('@/components/utils/Upload')
+  },
+  {
     path: '*',
     redirect: '/404'
   }

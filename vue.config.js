@@ -19,22 +19,22 @@ module.exports = {
   lintOnSave: false,
   runtimeCompiler: true,
   productionSourceMap: false,
-  proxy: {
-    //配置跨域
-    '/api': {
-      target: 'http://gcls.helxsoft.cn',
-      changOrigin: true, //允许跨域
-      pathRewrite: {
-        '^/api': ''
-      }
-    }
-  },
   devServer: {
     port: port,
     open: true, //默认false   true自动打开网页
     overlay: {
       warnings: false,
       errors: true
+    },
+    // 跨域配置
+    proxy: {
+      '/api': {
+        target: 'http://39.106.129.150:80/',
+        changOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
     }
   },
   css: {
