@@ -1,17 +1,54 @@
 <template>
   <div class="home">
     <HelloWorld msg="Welcome to Your Vue.js App" />
+    <el-upload
+      action="/GCLSBookWebSI/ServiceInterface"
+      :file-list="fileList"
+      :before-remove="beforeRemove"
+      :on-success="handleUploadSuccess"
+      :http-request="request"
+    >
+      <el-button size="small" type="primary">点击上传</el-button>
+    </el-upload>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue';
+import axios from 'axios';
 
 export default {
   name: 'Home',
+  data() {
+    return {
+      fileList: []
+    };
+  },
   components: {
     HelloWorld
+  },
+  methods: {
+    // beforeUpload(file) {
+    //   console.log(file);
+    // },
+    handleUploadSuccess(res, file) {
+      console.log(res);
+      console.log(file);
+    },
+    beforeRemove(file) {
+      console.log(file);
+      return this.$confirm(`确定移除 ${file.name}？`);
+    },
+    request(params) {
+      const file = params.file;
+
+      axios.post(file.action, {
+        Parameter: file,
+        FileSize: file.size,
+        FileName: file.name
+      });
+    }
   }
 };
 </script>
