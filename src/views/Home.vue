@@ -43,11 +43,16 @@ export default {
     request(params) {
       const file = params.file;
 
+      let data = new FormData();
+
+      data.append('upload', file);
       axios
         .post(params.action, {
-          Parameter: file,
-          FileSize: file.size,
-          FileName: file.name
+          headers: {
+            'content-type': 'multipart/form-data',
+            withCredentials: true
+          },
+          data
         })
         .then(function (response) {
           console.log(response);

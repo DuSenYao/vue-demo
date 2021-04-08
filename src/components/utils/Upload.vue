@@ -1,11 +1,16 @@
 <template>
-  <uploader :options="options" class="uploader-example">
-    <uploader-unsupport></uploader-unsupport>
+  <uploader
+    :options="options"
+    :file-status-text="statusText"
+    class="uploader-example"
+    @complete="complete"
+    @file-complete="fileComplete"
+    @file-error="fileError"
+  >
+    <!-- <uploader-unsupport></uploader-unsupport> -->
     <uploader-drop>
-      <p>Drop files here to upload or</p>
-      <uploader-btn>select files</uploader-btn>
-      <uploader-btn :attrs="attrs">select images</uploader-btn>
-      <uploader-btn :directory="true">select folder</uploader-btn>
+      <p>拖拽文件上传</p>
+      <uploader-btn>选择文件</uploader-btn>
     </uploader-drop>
     <uploader-list></uploader-list>
   </uploader>
@@ -18,12 +23,55 @@ export default {
       options: {
         // https://github.com/simple-uploader/Uploader/tree/develop/samples/Node.js
         target: '//localhost:3000/upload',
-        testChunks: false
+        testChunks: false,
+        chunkSize: 8 * 1024 * 1024 //块大小
       },
       attrs: {
         accept: 'image/*'
+      },
+      statusText: {
+        success: '成功',
+        error: '失败',
+        uploading: '上传中',
+        paused: '暂停中',
+        waiting: '等待中'
       }
     };
+  },
+  .3.3
+
+  methods: {
+    uploadStart() {
+      console.log('start');
+    },
+    complete() {
+      console.log('complete', arguments);
+    },
+    fileProgress(rootFile, file, chunk) {
+      console.log();
+    },
+    fileComplete() {
+      console.log('file complete', arguments);
+      const file = arguments[0].file;
+
+      let url =
+        'http://192.168.1.84:8089/upload/merge?filename=' +
+        file.name +
+        '&guid=' +
+        arguments[0].uniqueIdentifier;
+
+      this.$axios
+        .get(url)
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    },
+    fileError(rootFile, file, message, chunk) {
+      console.log({ rootFile, file, message, chunk });
+    }
   }
 };
 </script>
