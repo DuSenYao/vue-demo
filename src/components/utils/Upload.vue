@@ -38,8 +38,6 @@ export default {
       }
     };
   },
-  .3.3
-
   methods: {
     uploadStart() {
       console.log('start');
@@ -48,7 +46,7 @@ export default {
       console.log('complete', arguments);
     },
     fileProgress(rootFile, file, chunk) {
-      console.log();
+      console.log({ rootFile, file, chunk });
     },
     fileComplete() {
       console.log('file complete', arguments);

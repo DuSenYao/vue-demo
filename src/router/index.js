@@ -20,7 +20,7 @@ const routes = [
   {
     path: '/user',
     component: () =>
-      import(/* webpackChunkName: "layout" */ '@/layout/UserLayout'),
+      import(/* webpackChunkName: "layouts" */ '@/layouts/UserLayout'),
     children: [
       {
         path: '',
