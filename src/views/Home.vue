@@ -2,11 +2,11 @@
   <div class="home">
     <HelloWorld msg="Welcome to Your Vue.js App" />
     <el-upload
-      action="/api/GCLSBookWebSI/ServiceInterface"
+      action="/api/GCLSFileServer/WebFileUpload"
+      :limit="1"
       :file-list="fileList"
       :before-remove="beforeRemove"
       :on-success="handleUploadSuccess"
-      :http-request="request"
     >
       <el-button size="small" type="primary">点击上传</el-button>
     </el-upload>
