@@ -1,3 +1,3 @@
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
-export { default as SideMenu } from './SideMenu.vue';
+export { default as SideMenu } from './SideBar/SideMenu.vue';

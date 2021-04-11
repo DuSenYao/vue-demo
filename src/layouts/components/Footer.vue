@@ -1,6 +1,8 @@
 <template>
   <div class="footer">
-    <p>vue-demo @2021</p>
+    <Authorized :authority="['admin']">
+      <p>vue-demo @2021</p>
+    </Authorized>
   </div>
 </template>
 

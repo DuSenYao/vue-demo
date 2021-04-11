@@ -1,15 +1,21 @@
 <template>
   <div>
     <el-container>
-      <el-header><Header /></el-header>
+      <el-header>
+        <Header />
+      </el-header>
 
-      <el-aside :style="aside"><SideMenu /></el-aside>
+      <el-aside :style="aside">
+        <SideMenu />
+      </el-aside>
 
       <el-main>
         <router-view></router-view>
       </el-main>
 
-      <el-footer><Footer /></el-footer>
+      <el-footer>
+        <Footer />
+      </el-footer>
     </el-container>
   </div>
 </template>

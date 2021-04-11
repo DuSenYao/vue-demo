@@ -13,3 +13,12 @@ export function setToken(token) {
 export function removeToken() {
   return Cookies.remove(TokenKey);
 }
+
+export function getCurrentAuthority() {
+  return ['admin'];
+}
+
+export function check(authority) {
+  const current = getCurrentAuthority();
+  return current.some(item => authority.includes(item));
+}

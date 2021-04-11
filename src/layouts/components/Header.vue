@@ -1,6 +1,11 @@
 <template>
   <div>
-    <el-page-header @back="collapseOrUnfold" title="展开" content="详情页面"></el-page-header>
+    <el-page-header
+      v-auth="['admin']"
+      @back="collapseOrUnfold"
+      title="展开"
+      content="详情页面"
+    ></el-page-header>
   </div>
 </template>
 

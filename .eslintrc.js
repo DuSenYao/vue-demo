@@ -124,7 +124,6 @@ module.exports = {
     'no-underscore-dangle': 1,
     'no-unneeded-ternary': 2,
     'no-unreachable': 2,
-    'no-unused-expressions': 2,
     'no-unused-vars': [
       2,
       {

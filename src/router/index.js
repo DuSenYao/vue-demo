@@ -17,7 +17,7 @@ const routes = [
   {
     path: '/upload',
     name: 'Upload',
-    component: () => import('@/views/WebSdk')
+    component: () => import('@/views/Upload')
   },
   {
     path: '/',
@@ -86,13 +86,9 @@ const routes = [
     ]
   },
   {
-    path: '/Websdk',
-    name: 'Websdk',
-    component: () => import('@/views/WebSdk')
-  },
-  {
-    path: '/upload',
-    component: () => import('@/components/utils/Upload')
+    path: '/websdk',
+    name: 'WebSDK',
+    component: () => import('@/views/WebSDK')
   },
   {
     path: '/404',
