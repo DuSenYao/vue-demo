@@ -1,11 +1,7 @@
 <template>
-  <div></div>
+  <div>分析页</div>
 </template>
 
 <script>
 export default {};
 </script>
-
-<style lang="scss" scoped>
-// only
-</style>

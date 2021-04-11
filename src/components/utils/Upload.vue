@@ -81,9 +81,11 @@ export default {
   margin: 40px auto 0;
   font-size: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
   .uploader-btn {
     margin-right: 4px;
   }
+
   .uploader-list {
     max-height: 440px;
     overflow: auto;

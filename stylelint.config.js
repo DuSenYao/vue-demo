@@ -17,8 +17,11 @@ module.exports = {
     ],
     // 指定2个空格
     indentation: 2,
-    // 多个选择器样式之间不允许有空行
-    'rule-empty-line-before': 'never-multi-line',
+    // 多个选择器样式之间允许有空行
+    'rule-empty-line-before': [
+      'always',
+      { except: ['after-single-line-comment'] }
+    ],
     // 样式块中不允许重复的属性
     'declaration-block-no-duplicate-properties': true,
     // 指定颜色函数使用传统符号隔开

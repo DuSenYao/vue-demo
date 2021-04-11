@@ -7,11 +7,7 @@ module.exports = {
     es6: true
   },
 
-  extends: [
-    'plugin:vue/strongly-recommended',
-    'eslint:recommended',
-    '@vue/prettier'
-  ],
+  extends: ['plugin:vue/strongly-recommended', 'eslint:recommended', '@vue/prettier'],
 
   parserOptions: {
     parser: 'babel-eslint'
@@ -30,7 +26,8 @@ module.exports = {
         trailingComma: 'none',
         endOfLine: 'auto',
         bracketSpacing: true,
-        arrowParens: 'avoid'
+        arrowParens: 'avoid',
+        printWidth: 100
       }
     ],
     'no-alert': 0,
@@ -153,7 +150,6 @@ module.exports = {
     'accessor-pairs': 0,
     'block-scoped-var': 0,
     'brace-style': [1, '1tbs'],
-    'callback-return': 1,
     camelcase: 2,
     'comma-dangle': [2, 'never'],
     'comma-spacing': 0,
@@ -191,7 +187,7 @@ module.exports = {
     ],
     'lines-around-comment': 0,
     'max-depth': [0, 4],
-    'max-len': [0, 80, 4],
+    'max-len': [0, 100, 4],
     'max-nested-callbacks': [0, 2],
     'max-params': [0, 3],
     'max-statements': [0, 10],
@@ -211,12 +207,20 @@ module.exports = {
       }
     ],
     'new-parens': 2,
-    'newline-after-var': 2,
     'object-curly-spacing': [0, 'never'],
     'object-shorthand': 0,
     'one-var': 0,
     'operator-assignment': [0, 'always'],
-    'operator-linebreak': [2, 'after'],
+    'operator-linebreak': [
+      2,
+      'after',
+      {
+        overrides: {
+          '?': 'before',
+          ':': 'before'
+        }
+      }
+    ],
     'padded-blocks': 0,
     'prefer-const': 0,
     'prefer-spread': 0,
@@ -258,13 +262,11 @@ module.exports = {
     'wrap-regex': 0,
     yoda: [2, 'never']
   },
+
   // jest 测试配置
   overrides: [
     {
-      files: [
-        '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)'
-      ],
+      files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
       env: {
         jest: true
       }

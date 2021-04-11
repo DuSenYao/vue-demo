@@ -1,53 +1,89 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import NProgress from 'nprogress'; // progress bar
-import 'nprogress/nprogress.css';
-import Home from '@/views/Home';
 
-NProgress.configure({ showSpinner: false });
+import Login from '@/views/user/login';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home,
-    meta: {
-      requiresAuth: true
-    }
+    path: '/login',
+    component: Login
   },
   {
-    path: '/user',
-    component: () =>
-      import(/* webpackChunkName: "layouts" */ '@/layouts/UserLayout'),
+    path: '/register',
+    component: () => import('@/views/user/register')
+  },
+  {
+    path: '/upload',
+    name: 'Upload',
+    component: () => import('@/views/WebSdk')
+  },
+  {
+    path: '/',
+    component: () => import(/* webpackChunkName: 'layouts'*/ '@/layouts/BasicLayout'),
     children: [
+      // dashboard
       {
-        path: '',
-        redirect: 'login'
+        path: '/',
+        redirect: '/dashboard/analysis'
       },
       {
-        path: 'login',
-        name: 'Login',
-        component: () =>
-          // /* webpackChunkName: "user" */ 是webpack特殊注释语法，会把相同名称的统一打包
-          import(/* webpackChunkName: "user" */ '@/views/user/Login')
-      },
-      {
-        path: 'register',
-        name: 'Register',
-        component: () =>
-          import(/* webpackChunkName: 'user' */ '@/views/user/Register')
+        path: '/dashboard',
+        name: 'dashboard',
+        component: { render: h => h('router-view') },
+        children: [
+          {
+            path: '/dashboard/analysis',
+            name: 'analysis',
+            component: () =>
+              import(/* webpackChunkName: 'dashboard' */ '@/views/Dashboard/Analysis')
+          }
+        ]
       }
     ]
   },
+  // form
   {
-    path: '/about',
-    name: 'About',
-    // 路由级代码拆分
-    // 这会为此路由生成一个单独的块（about.[hash].js）
-    // 在访问路线时被延迟加载。
-    component: () => import('@/views/About')
+    path: '/form',
+    name: 'Form',
+    component: { render: h => h('router-view') },
+    children: [
+      {
+        path: '/form/basic-form',
+        name: 'BasicForm',
+        component: () => import(/* webpackChunkName: 'form'*/ '@/views/Forms/BasicForm')
+      },
+      {
+        path: '/form/step-form',
+        name: 'StepForm',
+        component: () => import(/* webpackChunkName:'form' */ '@/views/Forms/StepForm'),
+        children: [
+          {
+            path: '/form/step-form',
+            redirect: '/form/step-form/info'
+          },
+          {
+            path: '/form/step-form/info',
+            redirect: 'info',
+            component: () =>
+              import(/* webpackChunkName: 'form' */ '@/views/Forms/StepForm/StepInfo')
+          },
+          {
+            path: '/form/step-form/confirm',
+            name: 'confirm',
+            component: () =>
+              import(/* webpackChunkName: 'form' */ '@/views/Forms/StepForm/StepConfirm')
+          },
+          {
+            path: '/form/step-form/result',
+            name: 'result',
+            component: () =>
+              import(/* webpackChunkName: 'form'*/ '@/views/Forms/StepForm/StepResult')
+          }
+        ]
+      }
+    ]
   },
   {
     path: '/Websdk',
@@ -55,12 +91,13 @@ const routes = [
     component: () => import('@/views/WebSdk')
   },
   {
-    path: '/404',
-    component: () => import('@/views/404')
-  },
-  {
     path: '/upload',
     component: () => import('@/components/utils/Upload')
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import('@/views/404')
   },
   {
     path: '*',
@@ -76,18 +113,6 @@ const createRouter = () =>
   });
 
 const router = createRouter();
-
-// 全局前置守卫
-router.beforeEach((to, from, next) => {
-  NProgress.start();
-  console.log({ to, from });
-  next();
-});
-
-// 全局后置钩子
-router.afterEach(() => {
-  NProgress.done();
-});
 
 // Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
 // 重置路由

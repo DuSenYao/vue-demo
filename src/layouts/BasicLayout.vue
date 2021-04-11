@@ -1,23 +1,35 @@
 <template>
   <div>
-    <Header />
-    <SideBar />
-    <Footer />
-    <router-view></router-view>
+    <el-container>
+      <el-header><Header /></el-header>
+
+      <el-aside :style="aside"><SideMenu /></el-aside>
+
+      <el-main>
+        <router-view></router-view>
+      </el-main>
+
+      <el-footer><Footer /></el-footer>
+    </el-container>
   </div>
 </template>
 
 <script>
-import Header from './components/Header';
-import Footer from './components/Footer';
-import SideBar from './components/SideBar';
+import { Footer, Header, SideMenu } from './components';
 
 export default {
+  name: 'BasicLayout',
+  data() {
+    return {
+      aside: {}
+    };
+  },
   components: {
     Header,
     Footer,
-    SideBar
-  }
+    SideMenu
+  },
+  methods: {}
 };
 </script>
 

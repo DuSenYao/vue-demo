@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>footer</h1>
+  <div class="footer">
+    <p>vue-demo @2021</p>
   </div>
 </template>
 
@@ -9,5 +9,7 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-// only
+.footer {
+  border-top: 1px solid #999;
+}
 </style>

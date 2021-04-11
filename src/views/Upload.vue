@@ -1,6 +1,5 @@
 <template>
-  <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="upload">
     <el-upload
       action="/api/GCLSFileServer/WebFileUpload"
       :limit="1"
@@ -15,18 +14,14 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
 import axios from 'axios';
 
 export default {
-  name: 'Home',
+  name: 'Upload',
   data() {
     return {
       fileList: []
     };
-  },
-  components: {
-    HelloWorld
   },
   methods: {
     // beforeUpload(file) {

@@ -1,9 +1,18 @@
 <template>
-  <div><h1>Header</h1></div>
+  <div>
+    <el-page-header @back="collapseOrUnfold" title="展开" content="详情页面"></el-page-header>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  },
+  methods: {
+    collapseOrUnfold() {}
+  }
+};
 </script>
 
 <style lang="scss" scoped>

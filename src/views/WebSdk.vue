@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="login">login</button>
+    <button @click="login">login webSDK</button>
   </div>
 </template>
 
