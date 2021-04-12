@@ -1,6 +1,12 @@
 <template>
   <div class="login-container">
-    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" label-position="left">
+    <el-form
+      ref="loginForm"
+      :model="loginForm"
+      :rules="loginRules"
+      class="login-form"
+      label-position="left"
+    >
       <div class="title-container">
         <h3 class="title">系统登录</h3>
       </div>
@@ -28,7 +34,12 @@
         />
       </el-form-item>
 
-      <el-button :loading="loading" type="primary" @click.native.prevent="handleLogin">
+      <el-button
+        class="login-button"
+        :loading="loading"
+        type="primary"
+        @click.native.prevent="handleLogin"
+      >
         登录
       </el-button>
     </el-form>
@@ -129,7 +140,7 @@ export default {
   }
 
   .login-button {
-    margin: 0 81px;
+    margin: 0 225px;
   }
 }
 </style>

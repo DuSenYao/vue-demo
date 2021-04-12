@@ -1,21 +1,23 @@
 <template>
-  <div>
-    <el-container>
-      <el-header>
-        <Header />
-      </el-header>
-
-      <el-aside :style="aside">
+  <div class="basic-layout">
+    <el-container class="basic-container">
+      <el-aside :style="asideStyle">
         <SideMenu />
       </el-aside>
 
-      <el-main>
-        <router-view></router-view>
-      </el-main>
+      <el-container>
+        <el-header>
+          <Header />
+        </el-header>
 
-      <el-footer>
-        <Footer />
-      </el-footer>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
+
+        <el-footer>
+          <Footer />
+        </el-footer>
+      </el-container>
     </el-container>
   </div>
 </template>
@@ -27,7 +29,9 @@ export default {
   name: 'BasicLayout',
   data() {
     return {
-      aside: {}
+      asideStyle: {
+        width: '210px'
+      }
     };
   },
   components: {
@@ -40,5 +44,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// only
+.basic-layout,
+.basic-container {
+  height: 100%;
+}
 </style>

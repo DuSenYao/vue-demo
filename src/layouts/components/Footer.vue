@@ -1,17 +1,16 @@
 <template>
   <div class="footer">
     <Authorized :authority="['admin']">
-      <p>vue-demo @2021</p>
+      <div>vue-demo @2021</div>
     </Authorized>
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
-<style lang="scss" scoped>
+<style lang="scss">
 .footer {
-  border-top: 1px solid #999;
+  height: 100%;
+  line-height: 60px;
+  border-top: 1px solid $borderColor;
+  padding-left: 20px;
 }
 </style>

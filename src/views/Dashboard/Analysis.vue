@@ -1,7 +1,15 @@
 <template>
-  <div>分析页</div>
+  <div>
+    <Chart />
+  </div>
 </template>
 
 <script>
-export default {};
+import Chart from '@/components/Chart';
+
+export default {
+  components: {
+    Chart
+  }
+};
 </script>

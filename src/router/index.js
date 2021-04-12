@@ -8,7 +8,8 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/login',
-    component: Login
+    component: Login,
+    hideInMenu: false
   },
   {
     path: '/register',
