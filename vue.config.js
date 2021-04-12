@@ -9,7 +9,7 @@ const name = 'demo';
 
 const NODE_ENV = process.env.NODE_ENV;
 
-const port = process.env.port || process.env.npm_config_port || 8080;
+const port = process.env.port || process.env.npm_config_port || 9217;
 
 // 配置项说明 https://cli.vuejs.org/config/
 module.exports = {
@@ -78,6 +78,20 @@ module.exports = {
 
     // 当页面很多时，它将导致太多无意义的请求
     // config.plugins.delete('prefetch');
+
+    // 设置 svg-sprite-loader
+    config.module.rule('svg').exclude.add(resolve('src/icons')).end();
+    config.module
+      .rule('icons')
+      .test(/\.svg$/)
+      .include.add(resolve('src/icons'))
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]'
+      })
+      .end();
 
     config.when(process.env.NODE_ENV !== 'development', () => {
       config

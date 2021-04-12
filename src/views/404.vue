@@ -10,8 +10,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .http-404 {
   color: rgb(0, 174, 255);
+  text-align: center;
 }
 </style>

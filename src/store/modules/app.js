@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie';
-import app from '../mutation-types';
+import { app } from '../mutation-types';
 
 const state = {
   sidebar: {

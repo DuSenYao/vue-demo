@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import user from './modules/user';
 import app from './modules/app';
+import getters from './getters';
 
 Vue.use(Vuex);
 
@@ -23,18 +24,11 @@ export default new Vuex.Store({
       }, 2000);
     }
   },
-  // 就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。
-  // Getter 会暴露为 $store.getters 对象，可以以属性的形式访问这些值： $store.getters.doubleCount
-  getters: {
-    // Getter 接受 state 作为其第一个参数：
-    doubleCount(state) {
-      return state.count * 2;
-    }
-  },
   modules: {
     user,
     app
   },
+  getters,
   // 在严格模式下，无论何时发生了状态变更且不是由 mutation 函数引起的，将会抛出错误。这能保证所有的状态变更都能被调试工具跟踪到
   strict: process.env.NODE_ENV !== 'production'
 });

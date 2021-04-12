@@ -1,24 +1,33 @@
 <template>
-  <div>
-    <el-form ref="loginForm" :model="loginForm" :rules="loginRules">
-      <el-form-item>
+  <div class="login-container">
+    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" label-position="left">
+      <div class="title-container">
+        <h3 class="title">系统登录</h3>
+      </div>
+
+      <el-form-item prop="username">
         <el-input
           type="text"
-          v-model="loginForm.username"
+          v-model.trim="loginForm.username"
           ref="username"
           name="username"
+          auto-complete="on"
           placeholder="用户名称"
         />
       </el-form-item>
-      <el-form-item>
+
+      <el-form-item prop="password">
         <el-input
           ref="password"
           type="password"
           name="password"
-          v-model="loginForm.password"
+          v-model.trim="loginForm.password"
           placeholder="密码"
+          auto-complete="on"
+          @keyup.enter.native="handleLogin"
         />
       </el-form-item>
+
       <el-button :loading="loading" type="primary" @click.native.prevent="handleLogin">
         登录
       </el-button>
@@ -32,15 +41,17 @@ export default {
   data: function () {
     const validatorUsername = (rule, value, callback) => {
       if (!value) {
-        return callback(new Error('用户名不符合规则'));
+        callback(new Error('用户名不符合规则'));
+      } else {
+        callback();
       }
-      return callback();
     };
     const validatorPassword = (rule, value, callback) => {
-      if (value.length > 6) {
-        return callback(new Error('密码不能少于六位！'));
+      if (value.length < 6) {
+        callback(new Error('密码不能少于六位！'));
+      } else {
+        callback();
       }
-      return callback();
     };
 
     return {
@@ -49,16 +60,8 @@ export default {
         password: '1234567'
       },
       loginRules: {
-        username: {
-          required: true,
-          trigger: 'blur',
-          validator: validatorUsername
-        },
-        password: {
-          required: true,
-          trigger: 'blur',
-          validator: validatorPassword
-        }
+        username: [{ required: true, trigger: 'blur', validator: validatorUsername }],
+        password: [{ required: true, trigger: 'blur', validator: validatorPassword }]
       },
       loading: false,
       redirect: null
@@ -89,7 +92,6 @@ export default {
               this.$message.error('登录失败');
             });
         } else {
-          console.log('error submit!');
           return false;
         }
       });
@@ -98,6 +100,36 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-// only comments
+<style lang="scss">
+.login-container {
+  background-color: #f5f5f5;
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  .title-container {
+    position: relative;
+
+    .title {
+      font-size: 26px;
+      color: #999;
+      margin: 0 auto 40px auto;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  .login-form {
+    position: relative;
+    width: 520px;
+    max-width: 100%;
+    padding: 160px 35px 0;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .login-button {
+    margin: 0 81px;
+  }
+}
 </style>

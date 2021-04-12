@@ -1,12 +1,12 @@
 const user = {
-  UPDATE_USER_NAME: 'updateUserName',
-  UPDATE_REGISTER_STATE: 'updateRegisterState',
-  SET_TOKEN: 'setToken',
-  REMOVE_TOKEN: 'removeToken'
+  UPDATE_USER_NAME: 'UPDATE_USER_NAME',
+  UPDATE_REGISTER_STATE: 'UPDATE_REGISTER_STATE',
+  SET_TOKEN: 'SET_TOKEN',
+  REMOVE_TOKEN: 'REMOVE_TOKEN'
 };
 
 const app = {
-  TOGGLE_SIDEBAR: 'toggleSidebar'
+  TOGGLE_SIDEBAR: 'TOGGLE_SIDEBAR'
 };
 
-export default { user, app };
+export { user, app };

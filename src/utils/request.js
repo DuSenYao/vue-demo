@@ -25,7 +25,10 @@ service.interceptors.response.use(
         type: 'error',
         duration: 3 * 1000
       });
+      return Promise.reject(new Error(res.message || 'Error'));
     }
+
+    return res;
   },
   error => {
     Message({

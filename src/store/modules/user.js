@@ -1,4 +1,4 @@
-import user from '../mutation-types';
+import { user } from '../mutation-types';
 import { getToken, setToken, removeToken } from '@/utils/auth';
 // import { login } from '@/api/user';
 
@@ -38,7 +38,7 @@ const actions = {
     //     });
     // });
     return new Promise(reslove => {
-      // commit(user.SET_TOKEN, `token-${username}-${password}`);
+      commit(user.SET_TOKEN, `token-${username}-${password}`);
       setToken(`token-${username}-${password}`);
       reslove();
     });

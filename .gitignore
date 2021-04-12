@@ -12,9 +12,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# 本地配置文件
-.vscode/launch.json
-
 # 本地缓存文件
 .stylelintcache
 tests/**/coverage/

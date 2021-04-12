@@ -8,6 +8,7 @@
     "build": "vue-cli-service build",
     "build:stage": "vue-cli-service build --mode staging",
     "test:unit": "jest --clearCache && vue-cli-service test:unit",
+    "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml",
     "lint": "eslint --ext .js,.vue src",
     "lint:fix": "eslint --ext .js,.vue src --fix",
     "lint:css": "stylelint **/*.{html,vue,css,sass,scss,less}"
@@ -54,6 +55,8 @@
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.19.0",
     "stylelint-webpack-plugin": "^2.1.1",
+    "svg-sprite-loader": "^6.0.5",
+    "svgo": "^2.3.0",
     "vue-loader": "^15.9.6",
     "vue-template-compiler": "^2.6.12"
   },
