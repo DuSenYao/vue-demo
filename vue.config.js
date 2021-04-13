@@ -54,6 +54,7 @@ module.exports = {
       }
     },
     devtool: NODE_ENV === 'development' ? 'source-map' : '',
+    // stylelint 配置
     plugins: [
       new StyleLintPlugin({
         files: ['**/*.{vue,htm,html,css,sss,less,scss,sass}'],
@@ -93,7 +94,7 @@ module.exports = {
       })
       .end();
 
-    config.when(process.env.NODE_ENV !== 'development', () => {
+    config.when(NODE_ENV !== 'development', () => {
       config
         .plugin('ScriptExtHtmlWebpackPlugin')
         .after('html')

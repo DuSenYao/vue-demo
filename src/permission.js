@@ -18,6 +18,8 @@ router.beforeEach(async (to, from, next) => {
     if (to.path === '/login') {
       // 如果已登录，重定向到主页
       next({ path: '/' });
+      // 这个进度条完成，是防止跳转的是当前页面，全局后置钩子不会被触发
+      NProgress.done();
     } else {
       next();
     }
@@ -27,6 +29,7 @@ router.beforeEach(async (to, from, next) => {
   } else {
     // 其他无权访问的页面将重定向到登录页面
     next(`/login?redirect=${to.path}`);
+    NProgress.done();
   }
 });
 
