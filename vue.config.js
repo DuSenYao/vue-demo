@@ -25,17 +25,17 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
-    },
-    // 跨域配置
-    proxy: {
-      '/api': {
-        target: 'http://192.168.5.5:20088/',
-        changOrigin: true,
-        pathRewrite: {
-          '^/api': ''
-        }
-      }
     }
+    // 跨域配置
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://192.168.5.5:20088/',
+    //     changOrigin: true,
+    //     pathRewrite: {
+    //       '^/api': ''
+    //     }
+    //   }
+    // }
   },
   css: {
     loaderOptions: {
