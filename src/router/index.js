@@ -104,7 +104,7 @@ const routes = [
 
 const createRouter = () =>
   new VueRouter({
-    // mode: 'history',
+    mode: 'history',
     scrollBehavior: () => ({ y: 0 }),
     routes
   });
