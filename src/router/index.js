@@ -87,11 +87,6 @@ const routes = [
     ]
   },
   {
-    path: '/websdk',
-    name: 'WebSDK',
-    component: () => import('@/views/WebSDK')
-  },
-  {
     path: '/404',
     name: '404',
     component: () => import('@/views/404')
