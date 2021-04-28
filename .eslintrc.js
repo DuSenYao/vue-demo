@@ -12,7 +12,12 @@ module.exports = {
     es6: true
   },
 
-  extends: ['plugin:vue/strongly-recommended', 'eslint:recommended', '@vue/prettier'],
+  extends: [
+    'plugin:vue/strongly-recommended',
+    'plugin:vue/recommended',
+    'eslint:recommended',
+    '@vue/prettier'
+  ],
 
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',

@@ -16,7 +16,7 @@ import Authorized from '@/common/Authorized'; // 权限组件，更精细的权�
 // 只在第一次加载时调用，如果权限是动态的，不适合这种方式
 import Auth from '@/directives/auth';
 
-import '@/permission'; //权限控制
+import '@/permission'; // 权限控制
 
 Vue.use(ElementUI);
 // Vue.use(uploader);

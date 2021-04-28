@@ -24,7 +24,7 @@ export default {
         // https://github.com/simple-uploader/Uploader/tree/develop/samples/Node.js
         target: '//localhost:3000/upload',
         testChunks: false,
-        chunkSize: 8 * 1024 * 1024 //块大小
+        chunkSize: 8 * 1024 * 1024 // 块大小
       },
       attrs: {
         accept: 'image/*'

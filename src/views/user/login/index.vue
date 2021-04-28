@@ -13,9 +13,9 @@
 
       <el-form-item prop="username">
         <el-input
-          type="text"
-          v-model.trim="loginForm.username"
           ref="username"
+          v-model.trim="loginForm.username"
+          type="text"
           name="username"
           auto-complete="on"
           placeholder="用户名称"
@@ -25,9 +25,9 @@
       <el-form-item prop="password">
         <el-input
           ref="password"
+          v-model.trim="loginForm.password"
           type="password"
           name="password"
-          v-model.trim="loginForm.password"
           placeholder="密码"
           auto-complete="on"
           @keyup.enter.native="handleLogin"

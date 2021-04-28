@@ -3,9 +3,9 @@
     <el-menu
       default-active="2"
       class="el-menu-vertical-demo"
+      background-color="#c8e6c6"
       @open="handleOpen"
       @close="handleClose"
-      background-color="#c8e6c6"
     >
     </el-menu>
   </div>

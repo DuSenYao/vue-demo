@@ -27,17 +27,17 @@ import { Footer, Header, SideMenu } from './components';
 
 export default {
   name: 'BasicLayout',
+  components: {
+    Header,
+    Footer,
+    SideMenu
+  },
   data() {
     return {
       asideStyle: {
         width: '210px'
       }
     };
-  },
-  components: {
-    Header,
-    Footer,
-    SideMenu
   },
   methods: {}
 };

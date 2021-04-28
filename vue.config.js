@@ -41,7 +41,7 @@ module.exports = {
     loaderOptions: {
       scss: {
         // 为 scss 配置共享全局变量
-        additionalData: '@import "./src/styles/variables.scss";' //注意
+        additionalData: '@import "./src/styles/variables.scss";' // 注意
       }
     }
   },
