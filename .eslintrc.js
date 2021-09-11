@@ -12,12 +12,7 @@ module.exports = {
     es6: true
   },
 
-  extends: [
-    'plugin:vue/strongly-recommended',
-    'plugin:vue/recommended',
-    'eslint:recommended',
-    '@vue/prettier'
-  ],
+  extends: ['plugin:vue/strongly-recommended', 'plugin:vue/recommended', 'eslint:recommended', '@vue/prettier'],
 
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -33,7 +28,7 @@ module.exports = {
         endOfLine: 'auto',
         bracketSpacing: true,
         arrowParens: 'avoid',
-        printWidth: 100
+        printWidth: 120
       }
     ],
     'vue/max-attributes-per-line': [
