@@ -10,7 +10,7 @@
 .footer {
   height: 100%;
   line-height: 60px;
-  border-top: 1px solid $borderColor;
+  border-top: 1px solid $border-color;
   padding-left: 20px;
 }
 </style>

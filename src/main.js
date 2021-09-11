@@ -6,8 +6,6 @@ import store from './store';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
-// import uploader from 'vue-simple-uploader';
-
 import '@/styles/index.scss'; // global css
 import 'normalize.css/normalize.css';
 
@@ -19,9 +17,10 @@ import Auth from '@/directives/auth';
 import '@/permission'; // 权限控制
 
 Vue.use(ElementUI);
-// Vue.use(uploader);
+
 // 注册全局组件
 Vue.component('Authorized', Authorized);
+
 // 注册全局指令
 Vue.use(Auth);
 

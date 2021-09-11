@@ -2,12 +2,12 @@
   <div class="basic-layout">
     <el-container class="basic-container">
       <el-aside :style="asideStyle">
-        <SideMenu />
+        <side-menu />
       </el-aside>
 
       <el-container>
         <el-header>
-          <Header />
+          <header-area />
         </el-header>
 
         <el-main>
@@ -15,7 +15,7 @@
         </el-main>
 
         <el-footer>
-          <Footer />
+          <footer-area />
         </el-footer>
       </el-container>
     </el-container>
@@ -23,13 +23,13 @@
 </template>
 
 <script>
-import { Footer, Header, SideMenu } from './components';
+import { FooterArea, HeaderArea, SideMenu } from './components';
 
 export default {
   name: 'BasicLayout',
   components: {
-    Header,
-    Footer,
+    FooterArea,
+    HeaderArea,
     SideMenu
   },
   data() {

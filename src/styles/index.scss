@@ -1,13 +1,11 @@
-@import './variables.scss';
+@import './variables';
 
 body {
   height: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  /* stylelint-disable-next-line */
-  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
-    Microsoft YaHei, Arial, sans-serif; /* stylelint-disable-line */
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
 }
 
 label {
@@ -23,12 +21,6 @@ html {
   height: 100%;
 }
 
-a:focus,
-a:active {
-  outline: none;
-}
-
-/* stylelint-disable-next-line no-descending-specificity */
 a,
 a:focus,
 a:hover {
@@ -37,11 +29,15 @@ a:hover {
   text-decoration: none;
 }
 
+a:focus,
+a:active {
+  outline: none;
+}
+
 div:focus {
   outline: none;
 }
 
-// main-container global css
 .app-container {
   padding: 20px;
 }

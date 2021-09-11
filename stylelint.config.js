@@ -1,5 +1,5 @@
 module.exports = {
-  defaultSeverity: 'error',
+  defaultSeverity: 'warning',
   extends: 'stylelint-config-standard',
   plugins: ['stylelint-declaration-block-no-ignored-properties', 'stylelint-order'],
   rules: {

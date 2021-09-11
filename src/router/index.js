@@ -16,11 +16,6 @@ const routes = [
     component: () => import('@/views/user/register')
   },
   {
-    path: '/upload',
-    name: 'Upload',
-    component: () => import('@/views/Upload')
-  },
-  {
     path: '/',
     component: () => import(/* webpackChunkName: 'layouts'*/ '@/layouts/BasicLayout'),
     children: [
@@ -37,8 +32,7 @@ const routes = [
           {
             path: '/dashboard/analysis',
             name: 'analysis',
-            component: () =>
-              import(/* webpackChunkName: 'dashboard' */ '@/views/Dashboard/Analysis')
+            component: () => import(/* webpackChunkName: 'dashboard' */ '@/views/Dashboard/Analysis')
           }
         ]
       }
@@ -67,20 +61,17 @@ const routes = [
           {
             path: '/form/step-form/info',
             redirect: 'info',
-            component: () =>
-              import(/* webpackChunkName: 'form' */ '@/views/Forms/StepForm/StepInfo')
+            component: () => import(/* webpackChunkName: 'form' */ '@/views/Forms/StepForm/StepInfo')
           },
           {
             path: '/form/step-form/confirm',
             name: 'confirm',
-            component: () =>
-              import(/* webpackChunkName: 'form' */ '@/views/Forms/StepForm/StepConfirm')
+            component: () => import(/* webpackChunkName: 'form' */ '@/views/Forms/StepForm/StepConfirm')
           },
           {
             path: '/form/step-form/result',
             name: 'result',
-            component: () =>
-              import(/* webpackChunkName: 'form'*/ '@/views/Forms/StepForm/StepResult')
+            component: () => import(/* webpackChunkName: 'form'*/ '@/views/Forms/StepForm/StepResult')
           }
         ]
       }
