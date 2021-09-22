@@ -16,11 +16,6 @@ const routes = [
     component: () => import('@/views/user/register')
   },
   {
-    path: '/upload',
-    name: 'Upload',
-    component: () => import('@/views/Upload')
-  },
-  {
     path: '/',
     component: () => import(/* webpackChunkName: 'layouts'*/ '@/layouts/BasicLayout'),
     children: [

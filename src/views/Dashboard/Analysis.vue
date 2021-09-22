@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Chart />
+    <chart />
   </div>
 </template>
 

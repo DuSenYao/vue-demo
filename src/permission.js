@@ -1,9 +1,8 @@
 import router from './router';
-// import store from './store';
+
 import NProgress from 'nprogress'; // progress bar
 import 'nprogress/nprogress.css';
 import { getToken } from '@/utils/auth';
-
 NProgress.configure({ showSpinner: false });
 
 const whiteList = ['/login']; // 重定向白名单
@@ -12,9 +11,7 @@ const whiteList = ['/login']; // 重定向白名单
 router.beforeEach(async (to, from, next) => {
   NProgress.start();
 
-  const hasToken = getToken();
-
-  if (hasToken) {
+  if (getToken()) {
     if (to.path === '/login') {
       // 如果已登录，重定向到主页
       next({ path: '/' });
