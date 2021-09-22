@@ -38,7 +38,7 @@
 <script>
 export default {
   name: 'Login',
-  data: function () {
+  data() {
     const validatorPassword = (rule, value, callback) => {
       if (value.length < 6) {
         callback(new Error('密码不能少于六位！'));
@@ -94,20 +94,20 @@ export default {
 
 <style lang="scss">
 .login-container {
-  background-color: #f5f5f5;
-  min-height: 100%;
   width: 100%;
+  min-height: 100%;
   overflow: hidden;
+  background-color: #f5f5f5;
 
   .title-container {
     position: relative;
 
     .title {
+      margin: 0 auto 40px;
       font-size: 26px;
-      color: #999;
-      margin: 0 auto 40px auto;
-      text-align: center;
       font-weight: bold;
+      color: #999;
+      text-align: center;
     }
   }
 

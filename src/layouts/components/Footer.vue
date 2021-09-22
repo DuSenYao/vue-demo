@@ -9,8 +9,8 @@
 <style lang="scss">
 .footer {
   height: 100%;
+  padding-left: 20px;
   line-height: 60px;
   border-top: 1px solid $border-color;
-  padding-left: 20px;
 }
 </style>

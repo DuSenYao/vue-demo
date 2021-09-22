@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     handleClick() {
-      this.count++;
+      this.count += 1;
       this.$emit('change', this.count);
     }
   }

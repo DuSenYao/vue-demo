@@ -57,10 +57,10 @@ export default {
 
       this.$axios
         .get(url)
-        .then(function (response) {
+        .then(response => {
           console.log(response);
         })
-        .catch(function (error) {
+        .catch(error => {
           console.log(error);
         });
     },
@@ -85,7 +85,6 @@ export default {
 
   .uploader-list {
     max-height: 440px;
-    overflow: auto;
     overflow-x: hidden;
     overflow-y: auto;
   }

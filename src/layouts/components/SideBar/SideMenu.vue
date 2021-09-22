@@ -27,8 +27,8 @@ export default {
 <style lang="scss" scoped>
 .side-menu,
 .el-menu {
-  height: 100%;
   width: 210px;
+  height: 100%;
   overflow-x: hidden;
 }
 </style>

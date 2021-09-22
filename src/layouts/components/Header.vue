@@ -19,7 +19,7 @@ export default {
 .basic-header {
   height: 100%;
 
-  & div {
+  div {
     height: 100%;
     line-height: 60px;
     border-bottom: 1px solid $border-color;

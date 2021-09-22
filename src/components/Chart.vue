@@ -18,7 +18,7 @@ echarts.use([TitleComponent, TooltipComponent, GridComponent, BarChart, CanvasRe
 export default {
   mounted() {
     // 基于准备好的dom，初始化echarts实例
-    var myChart = echarts.init(this.$refs.chartDOM);
+    let myChart = echarts.init(this.$refs.chartDOM);
     // 绘制图表
     myChart.setOption({
       title: {

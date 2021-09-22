@@ -1,15 +1,17 @@
 module.exports = {
   defaultSeverity: 'warning',
-  extends: 'stylelint-config-standard',
-  plugins: ['stylelint-declaration-block-no-ignored-properties', 'stylelint-order'],
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-scss',
+    'stylelint-config-sass-guidelines',
+    'stylelint-config-recess-order'
+  ],
+  plugins: ['stylelint-declaration-block-no-ignored-properties'],
   rules: {
     'plugin/declaration-block-no-ignored-properties': true,
-    // 各分类属性顺序
-    'order/order': ['custom-properties', 'dollar-variables', 'declarations', 'rules', 'at-rules'],
+    'order/properties-alphabetical-order': null,
     // 指定2个空格
     indentation: 2,
-    // 多个选择器样式之间允许有空行
-    'rule-empty-line-before': ['always', { except: ['after-single-line-comment'] }],
     // 样式块中不允许重复的属性
     'declaration-block-no-duplicate-properties': true,
     // 指定颜色函数使用传统符号隔开
@@ -18,18 +20,16 @@ module.exports = {
     'function-url-no-scheme-relative': true,
     // 可组合成一个属性的写法，不允许拆开书写
     'declaration-block-no-redundant-longhand-properties': true,
-    // 选择器最大深度为4
-    'selector-max-compound-selectors': 4,
+    // 选择器最大深度
+    'selector-max-compound-selectors': 8,
     // 限制 id选择器的数目在一个选择器中
     'selector-max-id': 1,
     // 最多2个类型选择器
     'selector-max-type': 2,
-    // 不允许使用通配符选择器
-    'selector-max-universal': 0,
     // 不允许未知的动画
     'no-unknown-animations': true,
     // 在字体名称必须使用引号的地方使用引号，其他地方不能使用
-    'font-family-name-quotes': 'always-where-required',
+    'font-family-name-quotes': 'always-unless-keyword',
     // url 函数内部必须有引号
     'function-url-quotes': 'always',
     // 指定字符串引号为单引号
@@ -39,6 +39,12 @@ module.exports = {
     // 首行不允许空行
     'no-empty-first-line': true,
     // 不允许使用 unicode 作为顺序标记
-    'unicode-bom': 'never'
+    'unicode-bom': 'never',
+    'at-rule-no-unknown': [true, { ignoreAtRules: ['import', 'include', 'mixin', 'include', 'extend'] }],
+    'max-nesting-depth': 8,
+    'selector-no-qualifying-type': [true, { ignore: ['attribute', 'class', 'id'] }],
+    // 为类选择器指定一个模式
+    'selector-class-pattern': null,
+    'declaration-colon-newline-after': null
   }
 };
