@@ -1,11 +1,6 @@
 <template>
   <div class="basic-header">
-    <el-page-header
-      v-auth="['admin']"
-      title="关闭"
-      content="详情页面"
-      @back="collapseOrUnfold"
-    ></el-page-header>
+    <el-page-header v-auth="['admin']" title="关闭" content="详情页面" @back="collapseOrUnfold"></el-page-header>
   </div>
 </template>
 
@@ -24,10 +19,10 @@ export default {
 .basic-header {
   height: 100%;
 
-  & div {
+  div {
     height: 100%;
     line-height: 60px;
-    border-bottom: 1px solid $borderColor;
+    border-bottom: 1px solid $border-color;
   }
 }
 </style>

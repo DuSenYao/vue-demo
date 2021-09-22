@@ -9,9 +9,7 @@ export default {
       default: null
     }
   },
-  render(h, context) {
-    const { props, scopedSlots } = context;
-
+  render(h, { props, scopedSlots }) {
     return check(props.authority) ? scopedSlots.default() : null;
   }
 };

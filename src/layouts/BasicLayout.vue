@@ -2,7 +2,7 @@
   <div class="basic-layout">
     <el-container class="basic-container">
       <el-aside :style="asideStyle">
-        <SideMenu />
+        <side-menu />
       </el-aside>
 
       <el-container>

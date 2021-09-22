@@ -1,12 +1,6 @@
 <template>
   <div class="login-container">
-    <el-form
-      ref="loginForm"
-      :model="loginForm"
-      :rules="loginRules"
-      class="login-form"
-      label-position="left"
-    >
+    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" label-position="left">
       <div class="title-container">
         <h3 class="title">系统登录</h3>
       </div>
@@ -34,12 +28,7 @@
         />
       </el-form-item>
 
-      <el-button
-        class="login-button"
-        :loading="loading"
-        type="primary"
-        @click.native.prevent="handleLogin"
-      >
+      <el-button class="login-button" :loading="loading" type="primary" @click.native.prevent="handleLogin">
         登录
       </el-button>
     </el-form>
@@ -49,7 +38,7 @@
 <script>
 export default {
   name: 'Login',
-  data: function () {
+  data() {
     const validatorUsername = (rule, value, callback) => {
       if (!value) {
         callback(new Error('用户名不符合规则'));
@@ -80,7 +69,7 @@ export default {
   },
   watch: {
     $router: {
-      handler: function (router) {
+      handler(router) {
         this.redirect = router.query && router.query.redirect;
       }
     }
@@ -112,20 +101,20 @@ export default {
 
 <style lang="scss">
 .login-container {
-  background-color: #f5f5f5;
-  min-height: 100%;
   width: 100%;
+  min-height: 100%;
   overflow: hidden;
+  background-color: #f5f5f5;
 
   .title-container {
     position: relative;
 
     .title {
+      margin: 0 auto 40px;
       font-size: 26px;
-      color: #999;
-      margin: 0 auto 40px auto;
-      text-align: center;
       font-weight: bold;
+      color: #999;
+      text-align: center;
     }
   }
 

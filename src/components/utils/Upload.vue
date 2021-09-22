@@ -53,17 +53,14 @@ export default {
       const file = arguments[0].file;
 
       let url =
-        'http://192.168.1.84:8089/upload/merge?filename=' +
-        file.name +
-        '&guid=' +
-        arguments[0].uniqueIdentifier;
+        'http://192.168.1.84:8089/upload/merge?filename=' + file.name + '&guid=' + arguments[0].uniqueIdentifier;
 
       this.$axios
         .get(url)
-        .then(function (response) {
+        .then(response => {
           console.log(response);
         })
-        .catch(function (error) {
+        .catch(error => {
           console.log(error);
         });
     },
@@ -88,7 +85,6 @@ export default {
 
   .uploader-list {
     max-height: 440px;
-    overflow: auto;
     overflow-x: hidden;
     overflow-y: auto;
   }
