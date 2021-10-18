@@ -16,6 +16,7 @@ pnpm-debug.log*
 .stylelintcache
 tests/**/coverage/
 tests/**/__snapshots__
+package-lock.json
 
 # Editor directories and files
 .idea
