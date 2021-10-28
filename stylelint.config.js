@@ -4,7 +4,8 @@ module.exports = {
     'stylelint-config-standard',
     'stylelint-scss',
     'stylelint-config-sass-guidelines',
-    'stylelint-config-recess-order'
+    'stylelint-config-recess-order',
+    'stylelint-config-prettier'
   ],
   plugins: ['stylelint-declaration-block-no-ignored-properties'],
   rules: {
