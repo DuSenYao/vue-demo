@@ -2,7 +2,7 @@ module.exports = {
   defaultSeverity: 'warning',
   extends: [
     'stylelint-config-standard',
-    'stylelint-scss',
+    'stylelint-config-standard-scss',
     'stylelint-config-sass-guidelines',
     'stylelint-config-recess-order',
     'stylelint-config-prettier'

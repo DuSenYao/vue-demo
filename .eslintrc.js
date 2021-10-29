@@ -1,6 +1,9 @@
 module.exports = {
+  // 如果是SSR项目，则需要配置 node:true
   root: true,
 
+  // 为什么是这样的parser配置？https://eslint.vuejs.org/user-guide/#how-to-use-a-custom-parser
+  parser: 'vue-eslint-parser',
   parserOptions: {
     parser: 'babel-eslint',
     sourceType: 'module'
@@ -18,6 +21,11 @@ module.exports = {
     'plugin:vue/recommended',
     'eslint:recommended',
     '@vue/prettier'
+  ],
+
+  plugins: [
+    // 注意这里不能配置 html 选项，为什么？https://eslint.vuejs.org/user-guide/#why-doesn-t-it-work-on-vue-files
+    'vue'
   ],
 
   rules: {
