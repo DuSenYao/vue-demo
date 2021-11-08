@@ -77,7 +77,7 @@ export default {
   padding: 15px;
   margin: 40px auto 0;
   font-size: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 40%);
 
   .uploader-btn {
     margin-right: 4px;

@@ -20,7 +20,7 @@ module.exports = {
   runtimeCompiler: true,
   productionSourceMap: false,
   devServer: {
-    port: port,
+    port,
     open: true, // 自动打开浏览器网页
     overlay: {
       warnings: false,
@@ -46,7 +46,7 @@ module.exports = {
     }
   },
   configureWebpack: {
-    name: name,
+    name,
     // 配置路径别名
     resolve: {
       alias: {
@@ -57,11 +57,8 @@ module.exports = {
     // stylelint 配置
     plugins: [
       new StyleLintPlugin({
-        files: ['**/*.{vue,htm,html,css,sss,less,scss,sass}'],
-        fix: false, // 是否自动修复
-        cache: true, // 是否缓存
-        emitErrors: true,
-        failOnError: false
+        files: ['src/**/*.{vue,css,html,scss}'],
+        fix: true // 是否自动修复
       })
     ]
   },
