@@ -6,8 +6,7 @@
       background-color="#c8e6c6"
       @open="handleOpen"
       @close="handleClose"
-    >
-    </el-menu>
+    />
   </div>
 </template>
 

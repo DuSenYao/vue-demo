@@ -5,61 +5,40 @@ module.exports = {
   // 为什么是这样的parser配置？https://eslint.vuejs.org/user-guide/#how-to-use-a-custom-parser
   parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: 'babel-eslint',
-    sourceType: 'module'
+    parser: '@babel/eslint-parser',
+    sourceType: 'module',
+    ecmaVersion: 7,
+    ecmaFeatures: {
+      impliedStrict: true
+    }
   },
 
   env: {
     node: true,
-    browser: true,
-    es6: true
+    browser: true
   },
 
-  extends: [
-    'plugin:vue/essential',
-    'plugin:vue/strongly-recommended',
-    'plugin:vue/recommended',
-    'eslint:recommended',
-    '@vue/prettier'
-  ],
+  extends: ['eslint:recommended', 'plugin:vue/essential', 'plugin:vue/strongly-recommended', 'plugin:vue/recommended'],
 
   plugins: [
     // 注意这里不能配置 html 选项，为什么？https://eslint.vuejs.org/user-guide/#why-doesn-t-it-work-on-vue-files
-    'vue'
+    'vue',
+    'prettier'
   ],
 
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'prettier/prettier': [
-      'error',
-      {
-        tabWidth: 2,
-        useTabs: false,
-        semi: true,
-        singleQuote: true,
-        trailingComma: 'none',
-        endOfLine: 'auto',
-        bracketSpacing: true,
-        arrowParens: 'avoid',
-        printWidth: 120
-      }
-    ],
+    'vue/singleline-html-element-content-newline': 0,
     'vue/max-attributes-per-line': [
       2,
       {
-        singleline: {
-          max: 10
-        },
+        singleline: 8,
         multiline: {
           max: 1
         }
       }
     ],
-    'vue/singleline-html-element-content-newline': 'off',
-    'vue/multiline-html-element-content-newline': 'off',
-    'vue/name-property-casing': ['error', 'PascalCase'],
-    'vue/no-v-html': 'off',
     'accessor-pairs': 2,
     'arrow-spacing': [
       2,
@@ -280,12 +259,6 @@ module.exports = {
     'computed-property-spacing': [1, 'never'],
     'consistent-return': 0,
     'default-case': 1,
-    'dot-notation': [
-      0,
-      {
-        allowKeywords: true
-      }
-    ],
     'func-names': 1,
     'func-style': [0, 'declaration'],
     'guard-for-in': 0,

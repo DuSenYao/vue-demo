@@ -1,5 +1,5 @@
 <template>
-  <div ref="chartDOM" class="chartDOM"></div>
+  <div ref="chartDOM" class="chartDOM" />
 </template>
 
 <script>

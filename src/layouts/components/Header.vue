@@ -1,6 +1,6 @@
 <template>
   <div class="basic-header">
-    <el-page-header v-auth="['admin']" title="关闭" content="详情页面" @back="collapseOrUnfold"></el-page-header>
+    <el-page-header v-auth="['admin']" title="关闭" content="详情页面" @back="collapseOrUnfold" />
   </div>
 </template>
 
