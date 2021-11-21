@@ -9,6 +9,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 import '@/styles/index.scss'; // global css
 import 'normalize.css/normalize.css';
 
+import echarts from './EChart';
+Vue.prototype.$echarts = echarts;
+
 import Authorized from '@/common/Authorized'; // 权限组件，更精细的权限控制设计
 // 权限指令
 // 只在第一次加载时调用，如果权限是动态的，不适合这种方式

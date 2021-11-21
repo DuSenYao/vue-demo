@@ -22,7 +22,7 @@ module.exports = {
     // 可组合成一个属性的写法，不允许拆开书写
     'declaration-block-no-redundant-longhand-properties': true,
     // 选择器最大深度
-    'selector-max-compound-selectors': 8,
+    'selector-max-compound-selectors': 10,
     // 限制 id选择器的数目在一个选择器中
     'selector-max-id': 1,
     // 最多2个类型选择器
@@ -42,7 +42,7 @@ module.exports = {
     // 不允许使用 unicode 作为顺序标记
     'unicode-bom': 'never',
     'at-rule-no-unknown': [true, { ignoreAtRules: ['import', 'include', 'mixin', 'include', 'extend'] }],
-    'max-nesting-depth': 8,
+    'max-nesting-depth': [10, { ignore: ['blockless-at-rules', 'pseudo-classes'] }],
     'selector-no-qualifying-type': [true, { ignore: ['attribute', 'class', 'id'] }],
     // 为类选择器指定一个模式
     'selector-class-pattern': null,

@@ -9,8 +9,6 @@ const name = 'demo';
 
 const NODE_ENV = process.env.NODE_ENV;
 
-const port = process.env.port || process.env.npm_config_port || 9217;
-
 // 配置项说明 https://cli.vuejs.org/config/
 module.exports = {
   publicPath: NODE_ENV === 'development' ? '/' : '/vue-demo',
@@ -20,7 +18,7 @@ module.exports = {
   runtimeCompiler: true,
   productionSourceMap: false,
   devServer: {
-    port,
+    port: process.env.port || process.env.npm_config_port || 9217,
     open: true, // 自动打开浏览器网页
     overlay: {
       warnings: false,
@@ -41,7 +39,7 @@ module.exports = {
     loaderOptions: {
       scss: {
         // 为 scss 配置共享全局变量
-        additionalData: '@import "./src/styles/variables.scss";' // 注意
+        additionalData: `@import "@/styles/variables.scss";` // 注意
       }
     }
   },

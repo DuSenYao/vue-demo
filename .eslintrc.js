@@ -73,7 +73,7 @@ module.exports = {
     curly: [2, 'multi-line'],
     'dot-location': [2, 'property'],
     'eol-last': 2,
-    eqeqeq: [1, 'always'],
+    eqeqeq: [2, 'always'],
     'generator-star-spacing': [
       2,
       {
@@ -136,13 +136,7 @@ module.exports = {
         defaultAssignment: false
       }
     ],
-    'no-unused-vars': [
-      1,
-      {
-        vars: 'all',
-        args: 'none'
-      }
-    ],
+    'no-unused-vars': [1],
     'no-useless-computed-key': 2,
     'no-useless-constructor': 2,
     'no-whitespace-before-property': 2,
@@ -214,7 +208,11 @@ module.exports = {
     'no-empty': 1,
     'no-eq-null': 2,
     'no-extend-native': 2,
+    'no-multi-assign': 1,
+    'no-negated-condition': 2,
+    'no-duplicate-imports': 2,
     'no-extra-bind': 2,
+    'no-tabs': 2,
     'no-extra-parens': [2, 'functions'],
     'no-floating-decimal': 2,
     'no-implicit-coercion': 1,
@@ -247,6 +245,8 @@ module.exports = {
     'no-useless-call': 2,
     'no-void': 2,
     'no-var': 2,
+    'prefer-rest-params': 2,
+    'prefer-template': 2,
     'no-warning-comments': [
       1,
       {
@@ -260,7 +260,7 @@ module.exports = {
     'consistent-return': 0,
     'default-case': 1,
     'func-names': 1,
-    'func-style': [0, 'declaration'],
+    'func-style': 0,
     'guard-for-in': 0,
     'id-length': 0,
     'init-declarations': 1,

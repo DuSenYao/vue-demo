@@ -20,7 +20,7 @@ router.beforeEach(async (to, from, next) => {
     } else {
       next();
     }
-  } else if (whiteList.indexOf(to.path) !== -1) {
+  } else if (whiteList.includes(to.path)) {
     // 在登录白名单中，直接进入
     next();
   } else {
