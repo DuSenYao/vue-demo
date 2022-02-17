@@ -37,7 +37,6 @@
 
 <script>
 export default {
-  name: 'Login',
   data() {
     const validatorPassword = (rule, value, callback) => {
       if (value.length < 6) {

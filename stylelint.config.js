@@ -2,10 +2,10 @@ module.exports = {
   defaultSeverity: 'warning',
   extends: [
     'stylelint-config-standard-scss',
-    'stylelint-config-recommended-vue',
     'stylelint-config-sass-guidelines',
     'stylelint-config-recess-order',
-    'stylelint-config-prettier'
+    'stylelint-config-prettier',
+    'stylelint-config-recommended-vue'
   ],
   plugins: ['stylelint-declaration-block-no-ignored-properties'],
   rules: {
@@ -47,5 +47,6 @@ module.exports = {
     // 为类选择器指定一个模式
     'selector-class-pattern': null,
     'declaration-colon-newline-after': null
-  }
+  },
+  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts']
 };
