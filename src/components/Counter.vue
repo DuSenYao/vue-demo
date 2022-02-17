@@ -1,7 +1,9 @@
 <template>
   <div>
     <span>count: {{ count }}</span>
-    <button @click="handleClick">count++</button>
+    <button @click="handleClick">
+      count++
+    </button>
   </div>
 </template>
 
